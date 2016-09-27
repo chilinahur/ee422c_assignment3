@@ -36,11 +36,9 @@ public class Main {
 			ps = System.out;			// default to Stdout
 		}
 		initialize();
-		Set<String> dict = makeDictionary();
-		String[] ans = getAllMutants("start", dict);
-		for(int i =0; i<ans.length && ans[i] != null; i++){
-			System.out.println(ans[i]);
-		}
+		ArrayList<String> inputVals = parse(kb);	//get input
+		getWordLadderDFS(inputVals.get(0), inputVals.get(1));	//output DFS
+
 		// TODO methods to read in words, output ladder
 	}
 	
@@ -60,9 +58,7 @@ public class Main {
 		
 		inputList.add(0, keyboard.nextLine());
 		inputList.add(1, keyboard.nextLine());
-		
-		System.out.println(Arrays.toString(inputList.toArray()));
-		
+		//System.out.println(Arrays.toString(inputList.toArray()));
 		return inputList;
 	}
 	
@@ -71,10 +67,13 @@ public class Main {
 		// Returned list should be ordered start to end.  Include start and end.
 		// Return empty list if no ladder.
 		// TODO some code
-		
-		
+				
 		Set<String> dict = makeDictionary();
-		
+				
+		String[] ans = new String[25*start.length()];
+		for(int i = 0; i<ans.length; i++){	//takes into account all iterations
+			
+		}
 		// TODO more code
 		
 		return null; // replace this line later with real return
@@ -84,10 +83,7 @@ public class Main {
 		
 		// TODO some code
 		Set<String> dict = makeDictionary();
-		
-		String[] ans = new String[25*start.length()];
-		for(int i = 0; i<ans.length; i++){	//takes into account all iterations
-			
+
 		}
 		// TODO more code
 		
