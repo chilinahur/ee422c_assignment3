@@ -1,6 +1,6 @@
 /* WORD LADDER Main.java
  * EE422C Project 3 submission by
- * Replace <...> with your actual data.
+ *
  * Sriram Chilukuri
  * smc4474
  * 16445
@@ -84,7 +84,6 @@ public class Main {
 		// TODO some code
 		Set<String> dict = makeDictionary();
 
-		}
 		// TODO more code
 		
 		return null; // replace this line later with real return
