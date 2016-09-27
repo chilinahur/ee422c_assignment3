@@ -17,11 +17,17 @@ package assignment3;
 import java.util.*;
 import java.io.*;
 
-
 public class Main {
 	
 	// static variables and constants only here.
-
+	static class Node{
+		String data;
+		boolean visited;
+		Node(String value){
+			this.data=value;
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
 		
 		Scanner kb;	// input Scanner for commands
@@ -55,7 +61,9 @@ public class Main {
 	 */
 	public static ArrayList<String> parse(Scanner keyboard) {
 		ArrayList<String> inputList = new ArrayList<String>();
-		
+		if(keyboard.nextLine() == "/quit"){
+			return inputList;
+		}
 		inputList.add(0, keyboard.nextLine());
 		inputList.add(1, keyboard.nextLine());
 		//System.out.println(Arrays.toString(inputList.toArray()));
@@ -69,9 +77,10 @@ public class Main {
 		// TODO some code
 				
 		Set<String> dict = makeDictionary();
-				
-		String[] ans = new String[25*start.length()];
-		for(int i = 0; i<ans.length; i++){	//takes into account all iterations
+		String[] starterVals = getAllMutants(start, dict);
+		
+		for(int i = 0; i < starterVals.length; i++){		//takes into account all iterations
+			Node LinkedList = new Node(starterVals[i]);
 			
 		}
 		// TODO more code
