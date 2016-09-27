@@ -27,6 +27,7 @@ public class Main {
 			this.data=value;
 		}
 	}
+	static Stack<String> s = new Stack<String>();
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -44,7 +45,7 @@ public class Main {
 		initialize();
 		ArrayList<String> inputVals = parse(kb);	//get input
 		getWordLadderDFS(inputVals.get(0), inputVals.get(1));	//output DFS
-
+		getWordLadderBFS(inputVals.get(0), inputVals.get(1));	//output BFS
 		// TODO methods to read in words, output ladder
 	}
 	
@@ -61,27 +62,39 @@ public class Main {
 	 */
 	public static ArrayList<String> parse(Scanner keyboard) {
 		ArrayList<String> inputList = new ArrayList<String>();
-		if(keyboard.nextLine() == "/quit"){
+		String val = keyboard.nextLine();
+		if(val == "/quit"){
 			return inputList;
 		}
-		inputList.add(0, keyboard.nextLine());
+		inputList.add(0, val);
 		inputList.add(1, keyboard.nextLine());
 		//System.out.println(Arrays.toString(inputList.toArray()));
 		return inputList;
 	}
 	
 	public static ArrayList<String> getWordLadderDFS(String start, String end) {
-		
 		// Returned list should be ordered start to end.  Include start and end.
 		// Return empty list if no ladder.
 		// TODO some code
-				
 		Set<String> dict = makeDictionary();
+		s.push(start);
 		String[] starterVals = getAllMutants(start, dict);
-		
 		for(int i = 0; i < starterVals.length; i++){		//takes into account all iterations
-			Node LinkedList = new Node(starterVals[i]);
-			
+			if(starterVals[i] != null && starterVals[i] != end && !s.contains(starterVals[i]) ){
+			getWordLadderDFS(starterVals[i], end);
+			}
+			else if(starterVals[i]==end){
+				break;
+			}
+			else if(starterVals[i]==null){
+				break;
+			}
+			else if(s.contains(starterVals[i])){
+				break;
+			}
+		}
+		if(!s.contains(end)){
+			s.pop();
 		}
 		// TODO more code
 		
@@ -92,7 +105,10 @@ public class Main {
 		
 		// TODO some code
 		Set<String> dict = makeDictionary();
-
+		String[] starterVals = getAllMutants(start, dict);
+		
+		for(int i = 0; i < starterVals.length; i++){		//takes into account all iterations
+			}
 		// TODO more code
 		
 		return null; // replace this line later with real return
