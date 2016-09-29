@@ -84,7 +84,6 @@ public class Main {
 		}
 		return inputList;
 	}
-<<<<<<< HEAD
 	
 	/**
 	 * This method finds a word ladder using DFS
@@ -93,30 +92,17 @@ public class Main {
 	 * @return ArrayList of the word ladder through DFS
 	 */
 	public static ArrayList<String> getWordLadderDFS(String startIn, String endIn) {
-=======
-		
-	public static ArrayList<String> getWordLadderDFS(String start, String end) {
->>>>>>> origin/master
 		
 		// Returned list should be ordered start to end.  Include start and end.
 		// Return empty list if no ladder.
 		// TODO some code
-<<<<<<< HEAD
 		String start = startIn.toLowerCase();	//handle cases for testing just in case
 		String end = endIn.toLowerCase();
 		
-=======
-				
->>>>>>> origin/master
 		Set<String> dict = makeDictionary();
 		
 		ArrayList<String> visited = new ArrayList<String>();
 		ArrayList<String> ladder = new ArrayList<String>();
-<<<<<<< HEAD
-=======
-
-		ladder = recDFS(visited, start, end, dict);
->>>>>>> origin/master
 
 		ladder = recDFS(visited, start, end, dict);
 		
@@ -130,7 +116,6 @@ public class Main {
 		Collections.reverse(ladder);
 		return ladder;
 	}
-<<<<<<< HEAD
 	/**
 	 * This method finds a word ladder using BFS
 	 * @param startIn = start word
@@ -138,10 +123,6 @@ public class Main {
 	 * @return ArrayList of the word ladder through BFS 
 	 */
     public static ArrayList<String> getWordLadderBFS(String startIn, String endIn) {
-=======
-	
-    public static ArrayList<String> getWordLadderBFS(String start, String end) {
->>>>>>> origin/master
 		// TODO some code
 		String start = startIn.toLowerCase();	//handle cases for testing just in case
 		String end = endIn.toLowerCase();
@@ -250,15 +231,12 @@ public class Main {
 	// TODO
 	// Other private static methods here
 	
-<<<<<<< HEAD
 	/**
 	 * This method finds all mutants for a word form the dictionary.
 	 * @param input = word to find all mutants in dictionary for
 	 * @param dictionary = dictionary to be checked
 	 * @return String array of all the mutants
 	 */
-=======
->>>>>>> origin/master
 	private static String[] getAllMutants(String input, Set<String> dictionary){
 		String[] iterations = new String[input.length() * 25];
 		int count = 0;
@@ -276,7 +254,6 @@ public class Main {
 		return iterations;
 	}
 	
-<<<<<<< HEAD
 	/**
 	 * This method runs the recursive DFS routine
 	 * @param visited = ArrayList of all the already visited words
@@ -285,8 +262,6 @@ public class Main {
 	 * @param dict = dictionary to be checked from
 	 * @return the ladder that is found
 	 */
-=======
->>>>>>> origin/master
 	private static ArrayList<String> recDFS(ArrayList<String> visited, String start, String end, Set<String> dict){
 		
 		ArrayList<String> ladder = new ArrayList<String>();
